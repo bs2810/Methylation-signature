@@ -1,0 +1,257 @@
+\chapter{Method}
+\section{Dataset}
+\label{section:method:dataset}
+The study cohort consisted of control group, including 1083 Icelandic individuals participating in various projects at deCODE genetics, and two different case groups: Kabuki case group, including 17 individuals with clinical diagnoses of Kabuki syndrome (KS) and Widemann-Steiner case grup, including 10 individuals with clinical diagnosis of Wiedemann-Steiner syndrome (WSS). We analysed the two control groups separately,
+%control groups?
+such that there were in total 1100 individuals in the KS cohort and 1094 in the WSS
+%1083+10=1093
+cohort. All control samples had coverage of 10 or higher, however some of the samples in the case groups had slightly lower coverage. 
+
+The samples were whole-methylome-sequenced
+%Whole genome sequenced
+using ONT Ligation Sequencing Kit (SQK-LSK109). Libraries were sequenced on PromethION devices using FLO-PRO002/R9.4\_450bps flowcells. Standard base calling was done using Guppy (version 2.1.3) and Nanopolish (version 0.11.0) was used to directly call methylated CpGs from untreated DNA. The per location methylation statistics was then calculated using met.loglik script.
+
+\subsection{Kabuki: Sex and age match}
+It has been established that methylation pattern changes with age, so we also prepared dataset where we paired each sample of KS to a individual at similar age and same sex. We did not have a sample ready to pair with all of the KS individuals so we used 7 individuals with clinical diagnosis of KS, born in the years 1991-2004 and 8 control samples born in the years 1990-2003. 
+
+\subsection{Kabuki: Age factor}
+We also wanted to look at the age effect within the KS group so we split the group into older kabuki and younger kabuki and compared the methylation pattern of the two groups. Group 1 (older) was born in the years 1991-2004 and Group 2 (younger) was born in the years 2005-2016.
+
+\section{Variant calling}
+All KS and WSS samples were also sequenced using Illumina (which kits??) and variant calling ... ??
+
+In Table \ref{table:cont} detailed information can be found about the KS and WSS individuals.
+
+\begin {table}
+    \caption{Information about the KS and WSS patients}
+    \begin{center}
+        \begin{tabular}{ l l l p{5cm}}
+            \hline
+            \textbf{Sample} & \textbf{DOB} & \textbf{Sex} & \textbf{Gene Variant} \\
+             \hline
+             \hline
+             KS1 & 17.4.2016 & F & KMT2D*\\ %BZS
+             KS2 & 7.3.2014 & M & KDM6A\_p.Ser718GlufsTer12* \\ % BZT
+             KS3 & 16.2004 & F & KMT2D\_p.Arg2099Ter \\ %KMT2D, NM\_003482.3c.6295C>T (NP\_003473.3:pArg2099Ter)\\ %BZU
+             KS4 & 11.6.2009 & F & KMT2D\_p.Lys1760AsxfsTer27* \\ % BZV
+             KS5 & 28.10.2016 & M & KMT2D\_p.Gln4732Ter* \\ % BZW
+             KS6 & 2.8.2001 & F & KMT2D\_c.7481\_7482insT* \\ % BZX
+             KS7 & 13.7.1992 & M & KMT2D\_p.Ser4669Ter \\%KMT2D, NM\_003482.3:c.14006C>G (NP\_003473.3:p.Ser4669Ter)\\ % BZY
+             KS8 & 10.10.2005 & F & KMT2D\_p.Pro2549AlafsTer106 \\%KMT2D, NM\_003482.3:c.11610G>A (NP\_003473.3:p.Met3870Ile); NM\_003482.3:c.7643dupA (NP\_003473.3:p.Pro2549AlafsTer106); KDM6A, NM\_021140.2:c.2177C>A (NP\_066963.2:p.Thr726Lys)  \\ % BZZ
+             KS9 & 7.6.2011 & M & KMT2D\_p.Arg4484Ter \\ %KMT2D, NM\_003482.3:c.13450C>T (NP\_003473.3:p.Arg4484Ter); KMT2A, NM\_001197104.1:c.1504G>A (NP\_001184033.1:p.Glu502Lys) \\ % CAA
+             KS10 & 2.5.1985 & F & KMT2D\_p.14580dupT* \\ % CAB
+             KS11 & 6.11.2004 & M & KMT2D\_p.Cys1448Tyr* \\ % CAC
+             KS12 & 12.11.2001 & F & KMT2D\_p.Gln4233Ter* \\ % CAD
+             KS13 & 23.7.1991 & F & KMT2D\_p.Arg5179His \\%KMT2D, NM\_003482.3:c.15536G>A (NP\_003473.3:p.Arg5179His); KMT2A, NM\_001197104.1:c.6081G>T\\ % CAE
+             KS14 & 8.8.1997 & F & KMT2D* \\ %KMT2D, NM\_003482.3:c.7144C>T (NP\_003473.3:p.Pro238Ser); KMT2A NM\_001197104.1:c.10274C>T (NP\_001184033.1:p.Ala3425Val) \\ % CAF
+             KS15 & 8.7.1999 & F & KMT2D* \\ % CAG
+             KS16 & 15.4.2008 & M & KMT2D\_p.AsnCys5480Thr \\%KMT2D, NM\_003482.3:c.16445\_16446delTG (NP\_003473.3:p.Asn5480ThrfsTer7); NM\_003482.3:c.16439delA (NP\_003473.3:p.Asn5480ThrfsTer7) \\ % CAH
+             KS17 & 4.11.2006 & F & KMT2D\_c.14833delCinsAA* \\ % CAI
+             \hline
+             WSS1 & 7.11.1987 & F & KMT2A\_p.Arg2271GlyfsTer6 \\%KMT2A, NM\_001197104.1:c.6809delA (NP\_001184033.1:pArg2271GlyfsTer6) \\ %CAJ
+             WSS2 & 2.2.2010 & M & KMT2D\_c.14833delCinsAA* \\ % CAK
+             WSS3 & 14.1.2007 & M & KMT2A\_p.Cys1161Ser \\ %KMT2A, NM\_001197104.1:c.3482G>C (NP\_001184033.1:p.Cys1161Ser)\\ % CAL
+             WSS4 & 19.6.2010 & F & KMT2A\_c.4012+2T>A \\%KMT2A, NM\_001197104.1:c.4012+2T>A \\ % CAM
+             WSS5 & 31.1.2008 & M & KMT2A\_p.Ser774ValfsTer12* \\ % CAN
+             WSS6 & 3.8.2009 & F & KMT2A\_p.Ser774ValfsTer12*  \\ % CAO
+             WSS7 & 9.7.2012 & F & KMT2A\_p.pro51ArgfsTer84* \\ % CAP
+             WSS8 & 19.10.2004 & M & KMT2A\_p.Pro2474LeufsTer35 \\%KDM6A, NM\_021140.2:c.2177C>A (NP\_066963.2:p.Thr726Lys); KMT2A, NM\_001197104.1:c.7419delT (NP\_001184033.1:p.Pro2474LeufsTer35) \\ % CAQ
+             WSS9 & 9.10.2010 & F & KMT2A\_p.Ser1352ValfsTer4 \\%KDM6A, NM\_021140.2:c.2177C>A (NP\_066963.2:p.Thr726Lys); KMT2A, NM\_001197104.1:c.4053delA (NP\_001184033.1:pSer1352ValfsTer4) \\ % CAR
+             WS10 & 10.7.2012 & F & KMT2A\_p.Asp1917Tyr \\%KMT2A, NM\_001197104.1:c.5749G>T (NP\_001184033.1:pAsp1917Tyr) \\  % CAS
+%             WS11 & 23.2.2015 & ? & \\
+             \hline
+            \multicolumn{4}{c}{*not enough DNA to perform variant calling, information from Björnsson} \\
+
+        \end{tabular}
+    \label{table:cont}
+    \end{center}
+\end{table}
+
+ \section{OxBS-seq}
+ Samples were prepared using the TrueMethyl Whole Genome kit (Cambridge Epigenetix) following the manufacturer’s recommendations.This involved a three-step procedure:
+ \begin{enumerate}
+      \item genomic DNA (0.2–0.4 $\mu$g) was oxidized using a proprietary oxidant (Cambridge Epigenetix). This step was done to convert all 5-hydroxy methylcytosines to their formyl derivatives, 5-formylcytosines
+    \item bisulfite treatment of oxidized DNA converted both cytosines and 5-formylcytosines to uracil, leaving the 5-methylcytosines intact; 
+     \item Illumina-compatible oxBS sequencing libraries were prepared, using the appropriate primers and sequence adapters
+ \end{enumerate}
+
+All sequencing libraries were quality control monitored for size and concentration using a LabChip GX analyzer (PerkinElmer). Libraries were first sequenced on a MiSeq system (2$times$25 cycles; Illumina) to evaluate quality (insert size, library diversity, etc.) and then underwent further WGS on either HiSeq 2500 system (2$\times$125 cycles; Illumina) or HiSeq X system (2$\times$150 cycles; Illumina) with$\geq$20\% PhiX spike-in. The method was validated by sequencing four pairs of technical replicates and three pairs of matched biological replicates (Supplementary Fig. 18). Technical replicates were independent library preparations made from the same oxBS-treated DNA sample. Biological replicates were three pairs of samples from different individuals, matched on age, sex, and library quality parameters.
+
+ \section{Nanopolish performance}
+ \label{section:method:nanopolish-performance}
+Nanopolish estimates the log likelihood for all CpG islands in the genome. As quality control we first confirmed that all of the 450k probes from Infinium HumanMethylation450 v1.2 BeadChip used in Sobreira et al  \cite{sobreira2017patients}, were included in the nanopolish results. The 450k probe locations published on the Illumina website \cite{illuminaweb} are based on NCBI human genome assembly build 37 (hg19). Since Nanopolish locations are based on build 38 (hg38) we had to lift the 450k probes from build 37 to 38. Liftover was performed using GOR \cite{gudhbjartsson2016gorpipe}. We noticed that the coordinates were all 1 off, due to different indexing methods. After adding 1 to all of the 450k probe positions, all positions were included in the Nanopolish calling.  
+
+\subsection{Validation using bisulfate data}
+From our bisulfate data we extract regions that we refer to as \textit{methylated regions} and \textit{unmethylated regions}. Methylated regions are defined to have at least 95\% of their CpG islands methylated while unmethylated regions have at most 20\% of their CpG islands methylated. Then we extracted reads from our nanapolish data that match those regions, and measured their average ratios separately. We interprated the log likelihood ratios as follows:
+
+\begin{equation*}
+\centering
+    \begin{cases}
+    \text{if loglik\_ratio > 1.921 then methylated (MN)}\\
+    \text{if -1.921 $\leq$ loglik\_ratio $\leq$ 1.921 then methylateion status unknown (XN)} \\ 
+    \text{if loglik\_ratio < -1.921 then unmethylated (UN)} \\ 
+    \end{cases}
+\end{equation*}
+%Explain why 1.921
+
+Additionally we removed those reads where methylation status was unknown and calculate the average methylation ratio out of the remaining reads. The results are reported in the results section ( \ref{section:results:Nanopolish-performance}). 
+
+
+\subsection{Retraining nanopolish on promethION data}
+Since the Nanopolish model was trained on MinION data, we retrained the model using our PromethION data. Nanopolish methyltrain command requires the following input arguments:
+\begin{itemize}
+    \item set of reads where almost all of the CpG islands are methylated
+    %CpG's not CpG islnds
+    \item set of reads where almost none of the CpG islands are methylated
+    \item bam and bam indexing file containing the reads
+    \item fasta file containing the reads
+    \item reference genome
+\end{itemize}
+
+We extracted the methylated set of reads from our methylated regions of one individual. We included reads with mapping quality $geq$ 20. Similarly we created the unmethylated set of reads from unmethylated regions. We prepared the fasta files, sorted bam files and bam index files for the two sets of reads. 
+
+Before running the methyltrain command, the fasta files were indexed using the nanopolish \textit{index} command. We initialized the model files for the nucleotide alphabet according to the instructions in the Supplementary material of \cite{simpson2017detecting}, one for each of the three strands (template, complement.pop1 and complement.pop2). The model files were then extended for the CpG alphabet, giving us 6 model files in total. Each model file had the format shown in Tables \ref{table:modelfiles-cpg}-\ref{table:modelfiles-nucleotide}.
+
+\begin {table}
+    \centering
+    \caption{Contingency tables}
+    \begin{subtable}{1\linewidth}
+        \centering
+        \caption{Example of model file for CpG alphabet}
+                   \begin{tabular}{ l l l l l l l } 
+            \hline
+            \hline
+            \#model\_name & r9.4\_450bp & & & & & \\%
+            \#type & ONT  & & & & &\\
+            \#kit & r9.4\_450bps  & & & & & \\
+            \#strand & c.p1/c.p2/t & & & & & \\
+            kmer & level\_mean & level\_stdv & sd\_mean & sd\_stdv & ig\_lambda & weight \\
+            \#alphabet & cpg  & & & & & \\
+            AAAAAA & 83.459321 & 1.591638 & 1.321178 & 0.548785 & 7.657366 \\
+            AAAAAC & 81.128876 & 1.616835 & 1.321178 & 0.548785 & 7.657366 \\
+            AAAAAG & 82.529619 & 1.615134 & 1.329729 & 0.554122 & 7.657366 \\
+            AAAAAM & 81.128876 & 2.616835 & 1.463961 & 0.640110 & 7.657366\\
+            AAAAAT & 81.752998 & 1.553822 & 1.516740 & 0.675036 & 7.657366\\
+            \multicolumn{7}{c}{$\vdots$} \\
+
+             \hline
+        \end{tabular}
+        \label{table:modelfiles-cpg}
+    \end{subtable}
+    ~\vspace*{1 cm}
+
+    \begin{subtable}{1\linewidth}
+        \centering
+        \caption{Example of model file for nucleotide alphabet}
+        \begin{tabular}{ l l l l l l l } 
+            \hline
+            \#model\_name & r9.4\_450bp & & & & & \\%
+            \#type & ONT  & & & & &\\
+            \#kit & r9.4\_450bps  & & & & & \\
+            \#strand & c.p1/c.p2/t & & & & & \\
+            kmer & level\_mean & level\_stdv & sd\_mean & sd\_stdv & ig\_lambda & weight \\
+            AAAAAA & 83.459321 & 1.591638 & 1.321178 & 0.548785 & 7.657366 \\
+            AAAAAC & 81.128876 & 1.616835 & 1.321178 & 0.548785 & 7.657366 \\
+            AAAAAG & 82.529619 & 1.615134 & 1.329729 & 0.554122 & 7.657366 \\
+            AAAAAT & 81.752998 & 1.553822 & 1.516740 & 0.675036 & 7.657366\\
+            \multicolumn{7}{c}{$\vdots$} \\
+
+             \hline
+        \end{tabular}
+    \label{table:modelfiles-nucleotide}
+    \end{subtable}
+\end{table}
+
+
+Finally we lift the reference genome to the CpG alphabet by changing all $CG$ bases to $MG$. We train on both types of data over both the nucleotide and CpG alphabet, generating four combinations of data type/alphabet: met.nucleotide\_alphabet, met.cpg\_alphabet, unmet.nucleotide\_alphabet, unmet.cpg\_alphabet. After training the models, we end up with files in same format as the inital model files, with updated parameters. We ran the call-methylation command on 9 individuals from the control dataset, using the new model and measured the performance in the methylated and unmethylated regions as described previously. The results are reported in \ref{section:results:Nanopolish-performance}.
+
+\section{t-test}
+\label{section:method:t-test}
+Differentially methylated position (DMPs) were identified by performing a t-test between the average methylation of the normal group and kabuki group, per position. We used the met.loglik script to get the methylation statistics and calculated the average of each group per position in the genome and standard deviation using GOR.
+We filtered out reads where coverage exceeded $3\times$ the overall average coverage of the group (high coverage reads) and also reads that did not reach $0.5\times$ the overall average coverage (low coverage reads). 
+%Didn't you filter the regions and not necessarily whole reads.
+Additionally we only included positions where methylation or non-methylated was called with certainty in over 70\% of reads and the mean difference was more then 5\%. Sex chromosomes  were excluded.
+
+We calculated the difference per position between the two groups and used independent two sample t-test to determine if the difference was significant. The significant threshold was set to 0.05 (p-val = 0.05). We performed Bonferroni and Benjamini-Hochberg thresholding to reduce the number of False Positives. The False discovery rate (FDR) was set to 25\% for the Benjamini-Hochberg procedure. 
+ 
+ \subsection{Fisher's exact test}
+ To see if the positions identified as DMPs by Sobreira et al. \cite{sobreira2017patients} were more likely to be called significant in our data we performed Fisher exact test. We performed the Fiesher exact test for each thresholding method. The results are shown in \ref{section:results:Fisher-test}.
+
+
+\section{PCA}
+\label{section:method:t-test}
+To visualize the data and see if there appear to be any sort of clustering of the samples we performed Principal component analysis. We had a huge data matrix with 23 million features (about 400 GB) so we had reduce the feature set. 
+%
+We tried the following things:
+\begin{itemize}
+    \item Random PCA: select 1 million features randomly and perform PCA on those features
+    \item Perform PCA on the 590 features that were identified by Sobreira et al.
+    \item Perform PCA on the 450k features that Bisulfate sequencing uses to measure methylation
+    \item Perform PCA after applying two filters on the nanopolish data:
+        \begin{itemize}
+            \item  Select features where nanopolish gives similar results for both strands (plus and minus)
+            \item Select features where nanopolish called methylation or non-methylation with certainty in over 90\% of the reads
+        \end{itemize}
+\end{itemize}
+
+ 
+ We also performed PCA for the age matched dataset and the two age groups within Kabuki syndrome. The results are shown in Chapter \ref{section:results:PCA}.
+
+\subsection{Consistency between plus and minus strand}
+We calculated the average methylation ratio per strand for the whole cohort and excluded positions where the log likelihood was between -1.921 and 1.921. Then we calculated the difference in average ratio between the plus and minus strand, and filtered out those position where:
+
+\begin{equation*}
+    abs(\frac{sum\_ratio\_plus}{n\_plus} - \frac{sum\_ratio\_minus}{n\_minus}) \geq 0.005
+\end{equation*}
+
+
+That left us with 1,524,993 positions to work with. We found that on average the difference between the two strands was 0.09 (9\%). Results are shown in chapter \ref{sec:results:PCA}.
+
+\subsection{Certain in almost all reads}
+We calculated the average methylation ratio for the whole cohort and exluded positions where the log likelihood was between -1.921 and 1.921. Then we filtered out positions where:
+
+\begin{equation*}
+    \frac{total\_unmet + total\_met}{total\_count} \leq 0.8
+\end{equation*}
+ 
+ which left us with 3,651,209 positions. The PCA plot is shown in Chpater \ref{sec:results:PCA}.
+ 
+ \section{PRS}
+ \label{sec:method:PRS}
+The polygenic risk score was calculated using Equation \ref{eqn:prs}.
+
+\begin{equation}
+    \label{eqn:prs}
+    S = \frac{1}{m}\sum_{j=1}^m X_j \hat{\beta_j}
+\end{equation}
+
+where m is the number of positions included in the methylation signature for Kabuki, $X_j$ is the individuals marker genotype, calculated using Equation \ref{eqn:markergenotype} and $\beta_j$ is calculated using \ref{eqn:weight}.
+
+\begin{equation}
+    \label{eqn:markergenotype}
+    X_j = \frac{\mu_{k,j}-\mu_{n,j}}{\sqrt{\sigma^2_{k,j}}+\sigma^2_{n,j}}
+\end{equation}
+
+where $\mu_{k,j}$ is the mean of the kabuki group at position j and $\sigma_{k,j}$ is the standard deviation. Similarly $\mu_{n,j}$ and $\sigma_{n,j}$ are the mean and standard deviation of the control group, at position j.
+
+\begin{equation}
+    \label{eqn:weight}
+    \beta_j = \frac{\mu_{n,j}-x_j}{\sqrt{\sigma_{k,j}^2+\sigma_{x,j}^2}}
+\end{equation}
+
+where  $x_j$ is the individuals methylation ratio, at position j and $\sigma_{x,j}$ is the standard deviation, calculated from the methyl.loglik script using Equation \ref{eqn:std}.
+
+\begin{equation}
+    \label{eqn:std}
+    \sigma_{n,j} = \sqrt{\frac{ratio(1-ratio)}{sum\_met+sum\_unmet}}
+\end{equation}
+
+ 
+ 
+ 
+
+
+
+
+
+

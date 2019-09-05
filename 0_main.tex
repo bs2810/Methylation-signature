@@ -1,0 +1,78 @@
+d\documentclass[a4paper, oneside]{discothesis}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{placeins}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT METADATA
+
+\thesistype{Master's Thesis} % Master's Thesis, Bachelor's Thesis, Semester Thesis, Group Project
+\title{Heritability of methylation patterns and their components}
+
+\author{Brynja Sigurpalsdottir}
+\email{brynjas@student.ethz.ch}
+
+\institute{Computational Biology Group \\[2pt]
+Department of Biosystems and Engineering \\[2pt]
+ETH Zürich}
+
+% Optionally, you can put in your own logo here
+\logo{\includegraphics[width=0.6\columnwidth]{figures/decode.png}}
+
+%\supervisors{Supervisor 1, Supervisor 2\\[2pt] Prof.\ Dr.\ Roger Wattenhofer}
+
+% Optionally, keywords and categories of the work can be shown (on the Abstract page)
+%\keywords{Keywords go here.}
+%\categories{ACM categories go here.}
+
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\frontmatter % do not remove this line
+\maketitle
+
+\cleardoublepage
+
+\begin{acknowledgements}
+	I thank ..
+\end{acknowledgements}
+
+\begin{abstract}
+    asdf
+\end{abstract}
+
+\tableofcontents
+
+\mainmatter % do not remove this line
+
+
+\include{1_introduction}
+\include{2_background}
+\include{3_method}
+\include{4_results}
+\include{ltablex}
+
+
+
+
+% This displays the bibliography for all cited external documents. All references have to be defined in the file references.bib and can then be cited from within this document.
+\listoftables
+\listoffigures
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+% This creates an appendix chapter, comment if not needed.
+\appendix
+\chapter{First Appendix Chapter Title}
+
+\end{document}
